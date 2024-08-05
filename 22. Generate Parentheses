@@ -1,0 +1,25 @@
+class Solution {
+    public void func(int i, int  j , int n,List<String>ans ,String s){
+        if(i > n || j > n || i < j){
+            return ;
+        }
+        if(i == n && j == n){
+            ans.add(s);
+            return ;
+        }
+
+        func(i+1,j,n,ans,s+"(");
+        func(i,j+1,n,ans,s+")");
+        
+        return ;
+    }
+    public List<String> generateParenthesis(int n) {
+        List<String> ans = new LinkedList<>();
+        String s ="";
+        func(0,0,n, ans,s);
+
+        return ans;
+    }
+} 
+
+# recurssive solution using top - down approach there base case j == n and i == n
