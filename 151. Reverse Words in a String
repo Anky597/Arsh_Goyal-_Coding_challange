@@ -1,0 +1,18 @@
+class Solution {
+    public String reverseWords(String s) {
+        String t = s.trim();
+        String [] sam = t.split(" ");
+        StringBuilder str = new StringBuilder();
+        for(int i= sam.length -1;i>=0;i--){
+            String k = sam[i];
+            if( k.isBlank())continue;
+            str.append(k);
+            if(i != 0){
+                str.append(" ");
+            }
+        }
+
+        return str.toString();
+    }
+} 
+#solution uses the extra space.
